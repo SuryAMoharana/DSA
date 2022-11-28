@@ -15,18 +15,16 @@ public class Solution {
         
         for(int i=0;i<=s.length()-k;i++){
             String str=s.substring(i,k+i);
-            if(str.compareTo(s)<0){
+            if(smallest.compareTo(str)>0){
                 smallest=str;
             }
-            if(str.compareTo(s)>0){
+            if(largest.compareTo(str)<0){
                 largest=str;
             }
         }
        
         return smallest + "\n" + largest;
     }
-
-
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
