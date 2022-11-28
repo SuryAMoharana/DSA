@@ -1,7 +1,0 @@
-STRING OPERATION ============================================================================================
-
-1.	If we want to take out a subtring from a particular string, then we need to apply str.substring(start,end) where str is the substring and the output substring will be from the index position from start to end-1. Ofcourse start and end is Integer numbers.
-
-2.	str='abc'
-	Substrings = abc, ab, bc, a, b, c
-	Subsequence = abc, ac, ac, bc, a, b, c
