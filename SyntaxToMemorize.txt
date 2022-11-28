@@ -5,3 +5,5 @@ STRING OPERATION ===============================================================
 2.	str='abc'
 	Substrings = abc, ab, bc, a, b, c
 	Subsequence = abc, ac, ac, bc, a, b, c
+
+3. If we want to compare to string according to lexicographically(dictionary order), then we can use compartTo method. Example- str1.compareTo(str2). it returns -ve value if str1<str2(that means fall first in dictionary) and vice versa.
