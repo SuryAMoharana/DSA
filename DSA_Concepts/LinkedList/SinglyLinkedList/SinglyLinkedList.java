@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.SinglyLinkedList;
 
 public class SinglyLinkedList {
     private Node head;
@@ -72,6 +72,39 @@ public class SinglyLinkedList {
         }
     }
 
+    public Node popAt(int idx) {
+        //Check idx is within the current size of the list
+        if (idx >= 0 && idx < this.size) {
+            //Create a new header node with null data and a pointer to the current head
+            Node header = new Node((Object) null, this.head);
+            //copy header into a new node before
+            //before will be the node infront of the removed node
+            Node before = header;
+            //Loop to the specified index
+            for (int i = 0; i < idx; i++) {
+                //Set before to the next node in the list
+                before = before.getNext();
+            }
+            //Copy the Node after before into a new Node temp
+            Node temp = before.getNext();
+            //Set the next Node to before, to the Node after temp
+            before.setNext(temp.getNext());
+            //Disjoin temp from the list
+            temp.setNext((Node) null);
+            //Set the head of the list to be the Node after header
+            this.head = header.getNext();
+            //Decrease the size counter
+            this.size--;
+            //return the propped node
+            return temp;
+        } else {
+            System.out.println("INDEX OUT OF BOUNDS");
+            //Return null if the idx is out of bounds
+            return new Node(null, null);
+        }
+    }
+
+
     public static void main(String[] args) {
         SinglyLinkedList singlyLinkedList=new SinglyLinkedList();
         singlyLinkedList.prepend(100);
@@ -86,6 +119,8 @@ public class SinglyLinkedList {
         //singlyLinkedList.traverse();
 
         singlyLinkedList.popFirst();
+        singlyLinkedList.traverse();
+        singlyLinkedList.popAt(0);
         singlyLinkedList.traverse();
     }
 
